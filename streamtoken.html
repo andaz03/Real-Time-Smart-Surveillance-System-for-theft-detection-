@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'boxicon/css/boxicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/streamtoken.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fa.css' %}">
+    <style>
+        /* Inline CSS for the video frame */
+        #vidHolder {
+            max-width: 320px; /* Set the desired width */
+            max-height: 240px; /* Set the desired height */
+            width: 100%; /* Make it responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <nav id="stickynav">
+                <button id="minBtn" class="ctrlBtn"><i class='bx bx-minus'></i></button>
+                <button id="closeBtn" class="ctrlBtn"><i class="fas fa-times"></i></button>
+            </nav>
+        </header>
+        <div class="container-fluid">
+            <h1 class="text-center mb-2" style="margin: 0;">Result</h1>
+            <hr class="my-1 mb-3">
+            <div class="d-flex justify-content-center align-items-center">
+                <!-- Adjusted size of the video frame -->
+                <img src="{% url 'streamtk' token %}" id="vidHolder" alt="Video Stream">
+            </div>
+        </div>
+    </main>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/electron.js' %}"></script>
+</body>
+
+</html>
